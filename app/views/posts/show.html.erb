@@ -19,7 +19,7 @@ Categories: <%= @post.categories.map(&:name).join(' ') %>
 
 Commentors:
 <ul>
-<% @post.users.distinct.each do |user| %>
+<% @post.users.uniq.each do |user| %>
   <li>
     <%= link_to user.username, user_path(user) %>
   </li>
